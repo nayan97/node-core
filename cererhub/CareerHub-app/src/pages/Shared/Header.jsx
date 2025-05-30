@@ -35,8 +35,9 @@ const Header = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <NavLink to="/register" className="btn">Register</NavLink>
+                <div className="navbar-end flex gap-2">
+                    <NavLink to="/login" className="btn">Login</NavLink>
+                    <NavLink to="/register" className="btn btn-accent  text-white">Register</NavLink>
                 </div>
                 </div>
         </div>

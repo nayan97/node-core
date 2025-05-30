@@ -1,8 +1,10 @@
 import Lottie from 'lottie-react';
-import React from 'react';
+import React, { use } from 'react';
 import groovyWalkAnimation from "../../assets/lottereg.json";
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Register = () => {
+    const {createUser} = use(AuthContext);
         const handleRegisiter = e =>{
             e.preventDefault();
             const form = e.target;
@@ -12,6 +14,15 @@ const Register = () => {
             const name = form.name.value;
             console.log(name, email, password)
 
+
+            createUser(email, password)
+                .then(result =>{
+                    console.log(result.user);
+                    
+                })
+                .catch(error =>{
+                    console.log(error)
+                })
 
         }
 
