@@ -1,7 +1,22 @@
-import React from 'react';
+import React, {use} from 'react';
 import { NavLink } from 'react-router';
 
+import { AuthContext } from '../../contexts/AuthContext';
+
 const Header = () => {
+
+    const {user, logoutUser} = use(AuthContext);
+
+    const handleLogout = () =>{
+        logoutUser()
+            .then(() =>{
+                console.log('logout successfully');
+                
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
     const links = 
         <> 
@@ -36,8 +51,13 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex gap-2">
-                    <NavLink to="/login" className="btn">Login</NavLink>
-                    <NavLink to="/register" className="btn btn-accent  text-white">Register</NavLink>
+                        {
+                            user ? <button onClick={handleLogout} className='btn'>Logout</button> : <>
+                            <NavLink to="/login" className="btn">Login</NavLink>
+                            <NavLink to="/register" className="btn btn-accent  text-white">Register</NavLink></>
+
+                        }
+                    
                 </div>
                 </div>
         </div>

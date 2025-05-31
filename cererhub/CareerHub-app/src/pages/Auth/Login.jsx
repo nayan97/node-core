@@ -4,25 +4,26 @@ import lottelog from "../../assets/lottelog.json";
 import { AuthContext } from '../../contexts/AuthContext';
 
 const Login = () => {
-    const {createUser} = use(AuthContext);
+    const {loginUser} = use(AuthContext);
         const handleLogin = e =>{
             e.preventDefault();
             const form = e.target;
 
             const email = form.email.value;
             const password = form.password.value;
-            const name = form.name.value;
-            console.log(name, email, password)
+            // console.log(email, password)
 
-
-            createUser(email, password)
-                .then(result =>{
+            loginUser(email, password)
+             .then(result =>{
                     console.log(result.user);
                     
                 })
                 .catch(error =>{
                     console.log(error)
                 })
+
+
+     
 
         }
 
