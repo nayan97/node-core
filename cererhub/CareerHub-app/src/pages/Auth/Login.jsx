@@ -2,6 +2,7 @@ import Lottie from 'lottie-react';
 import React, { use } from 'react';
 import lottelog from "../../assets/lottelog.json";
 import { AuthContext } from '../../contexts/AuthContext';
+import Social from './Social';
 
 const Login = () => {
     const {loginUser} = use(AuthContext);
@@ -42,13 +43,14 @@ const Login = () => {
                               <fieldset className="fieldset">
                               
                                 <label className="label">Email</label>
-                                <input type="email" name="email" className="input" placeholder="Email" />
+                                <input type="email" name="email" className="input w-full" placeholder="Email" />
                                 <label className="label">Password</label>
-                                <input type="password" name="password" className="input" placeholder="Password" />
+                                <input type="password" name="password" className="input w-full" placeholder="Password" />
                                 <div><a className="link link-hover">Forgot password?</a></div>
                                 <button className="btn btn-neutral mt-4">Login</button>
                             </fieldset>
                         </form>
+                        <Social></Social>
                 </div>
                 </div>
             </div>
