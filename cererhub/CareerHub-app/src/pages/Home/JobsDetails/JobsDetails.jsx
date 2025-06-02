@@ -11,7 +11,7 @@ const JobsDetails = () => {
 
                     <div className="flex justify-between items-center">
                                     <h3 className='font-bold'>Deadline: {applicationDeadline}</h3>
-                                    <Link to={`/jobs/${_id}`}> <button className="btn btn-accent  text-white">Apply Now</button></Link>
+                                    <Link to={`/jobapply/${_id}`}> <button className="btn btn-accent  text-white">Apply Now</button></Link>
                     </div>
 
             

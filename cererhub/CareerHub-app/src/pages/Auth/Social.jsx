@@ -1,14 +1,17 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router';
 
-const Social = () => {
+const Social = ({from}) => {
 
     const {loginWithGoogle} = use(AuthContext);
+    const navigate = useNavigate()
 
     const handleGoogleLogin = () =>{
        loginWithGoogle()
        .then(result =>{
         console.log(result);
+        navigate(from || '/')
        })
        .catch(error =>{
         console.log(error);

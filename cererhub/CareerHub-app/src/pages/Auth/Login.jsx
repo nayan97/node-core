@@ -3,15 +3,22 @@ import React, { use } from 'react';
 import lottelog from "../../assets/lottelog.json";
 import { AuthContext } from '../../contexts/AuthContext';
 import Social from './Social';
+import { useLocation, useNavigate } from 'react-router';
 
 const Login = () => {
     const {loginUser} = use(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state || '/'
+    console.log(location);
+    
         const handleLogin = e =>{
             e.preventDefault();
             const form = e.target;
 
             const email = form.email.value;
             const password = form.password.value;
+            navigate(from);
             // console.log(email, password)
 
             loginUser(email, password)
@@ -50,7 +57,7 @@ const Login = () => {
                                 <button className="btn btn-neutral mt-4">Login</button>
                             </fieldset>
                         </form>
-                        <Social></Social>
+                        <Social from={from}></Social>
                 </div>
                 </div>
             </div>
