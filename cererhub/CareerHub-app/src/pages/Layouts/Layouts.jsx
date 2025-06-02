@@ -8,7 +8,7 @@ const Layouts = () => {
         <div>
             <Header></Header>
                 <div className="bg-pink-50">
-                    <div className="w-7xl mx-auto p-8 pt-0">
+                    <div className="w-xl md:w-3xl lg:w-7xl mx-auto p-8 pt-0">
                         <Outlet></Outlet>
                     </div>
                 </div>
