@@ -7,9 +7,11 @@ const Layouts = () => {
     return (
         <div>
             <Header></Header>
-            <div className="w-7xl mx-auto">
-                <Outlet></Outlet>
-            </div>
+                <div className="bg-pink-50">
+                    <div className="w-7xl mx-auto p-8 pt-0">
+                        <Outlet></Outlet>
+                    </div>
+                </div>
             <Footer></Footer>
 
         </div>
