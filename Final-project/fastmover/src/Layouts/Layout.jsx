@@ -6,9 +6,11 @@ import Footer from '../pages/Shared/Footer';
 const Layout = () => {
     return (
         <div>
-            <Header></Header>
+            <div className="w-7xl mx-auto">
+                 <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
+            </div>
         </div>
     );
 };
