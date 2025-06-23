@@ -4,7 +4,6 @@ const clientLogos = [
   "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png",
   "https://1000logos.net/wp-content/uploads/2021/11/Nike-Logo.png",
   "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-  "https://upload.wikimedia.org/wikipedia/commons/2/26/Pepsi_logo_2014.svg",
   "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg",
   "https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_logo_(2012).svg"
 ];
