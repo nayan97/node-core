@@ -1,7 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import useAuth from "../../hooks/useAuth";
 
 const Registar = () => {
+    const { createUser } = useAuth();
   const {
     register,
     formState: { errors },
@@ -9,8 +11,14 @@ const Registar = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
+    createUser(data.email, data.password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
-
   return (
     <div>
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

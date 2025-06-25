@@ -1,15 +1,27 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import useAuth from "../../hooks/useAuth";
+import Social from "../Auth/Social";
 
 const Login = () => {
+  const { createUser } = useAuth();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+
   const onSubmit = (data) => {
     console.log(data);
+    createUser(data.email, data.password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -36,7 +48,7 @@ const Login = () => {
               password is required
             </p>
           )}
-                    {errors.password?.type === "minLength" && (
+          {errors.password?.type === "minLength" && (
             <p role="alert" className="text-red-600">
               password is must be 6 character.
             </p>
@@ -45,8 +57,15 @@ const Login = () => {
             <a className="link link-hover">Forgot password?</a>
           </div>
           <button className="btn btn-neutral mt-4">Login</button>
+          <p className="text-center mt-4">
+            Don’t have an account?{" "}
+            <a href="/register" className="text-blue-600 hover:underline">
+              Register here
+            </a>
+          </p>
         </fieldset>
       </form>
+      <Social></Social>
     </div>
   );
 };
