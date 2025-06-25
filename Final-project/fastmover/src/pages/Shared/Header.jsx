@@ -1,7 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router';
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
+    const { user, logoutUser } = useAuth();
+    const handleLogout = () => {
+    logoutUser()
+      .then(() => {
+        console.log("logout successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
    const Navlinks = <>
         <li><NavLink>Home</NavLink></li>
    </>
@@ -29,7 +40,17 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+            {user && (
+            <>
+              <a
+                href="/login"
+                className="btn btn-error text-white"
+                onClick={handleLogout}
+              >
+                Logout
+              </a>
+            </>
+          )}
   </div>
 </div>
             

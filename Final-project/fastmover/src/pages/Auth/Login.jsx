@@ -4,7 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import Social from "../Auth/Social";
 
 const Login = () => {
-  const { createUser } = useAuth();
+  const { loginUser } = useAuth();
   const {
     register,
     formState: { errors },
@@ -13,7 +13,7 @@ const Login = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    createUser(data.email, data.password)
+    loginUser(data.email, data.password)
       .then((result) => {
         console.log(result.user);
       })

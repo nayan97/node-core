@@ -9,6 +9,8 @@ const Registar = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password)
