@@ -14,7 +14,13 @@ const Header = () => {
       });
   };
    const Navlinks = <>
-        <li><NavLink>Home</NavLink></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        { user && 
+        <>
+             <li><NavLink to="sendparcel">Send Parcel</NavLink></li>
+        </>
+
+        }
    </>
 
    

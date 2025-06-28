@@ -4,6 +4,8 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Auth/Login"
 import Register from "../pages/Auth/Register"
+import PrivateRoute from "../routes/PrivateRoute";
+import SendParcel from "../pages/SendParcel/SendParcel"
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +15,12 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: 'sendparcel',
+        element: <PrivateRoute>
+              <SendParcel></SendParcel>
+        </PrivateRoute>
       }
     ]
   },
